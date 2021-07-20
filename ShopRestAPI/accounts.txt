@@ -1,0 +1,7 @@
+Header name: Authorization
+Header content: "Basic email:password" where "email:password" is encoded as base64
+
+1. email: esupplier@mail.com, password: esupplier
+2. email: sportshop@mail.com, password: sportshop
+3. email: omarket@mail.com, password: omarket
+
