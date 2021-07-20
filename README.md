@@ -11,6 +11,8 @@ Small Shop REST API made in ASP NET Core for exercise.
 # Routes
 *All requests must be authorized with [basic header authorization](https://en.wikipedia.org/wiki/Basic_access_authentication), example data is stored in accounts.txt*
 
+Base URL: **shop_api/**
+
 **Products**
 |Method|Route|Action|Description| 
 |---|---|---|---|
@@ -47,6 +49,14 @@ Small Shop REST API made in ASP NET Core for exercise.
 |---|---|---|---|
 |GET|images/{id}|ImagesController::GetImage|Returns image file.
 |POST|images/|ImagesController::CreateImage|Uploads new image.
+
+*More details can be seen in swagger after building project and running ISS express. Swagger will not show all possible return codes.*
+
+# Filtering
+Example:
+
+    GET shop_api/products?sortBy=Name&filter=Price>>20
+Gets all users' products that have prive greater than 20, and sorts them by name property.
 
 **Third party:**
  - Filtering/Paging/Sorting provided by [Gridify](https://alirezanet.github.io/Gridify/)
