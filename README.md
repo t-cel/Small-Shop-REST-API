@@ -56,7 +56,7 @@ Base URL: **shop_api/**
 Example:
 
     GET shop_api/products?sortBy=Name&filter=Price>>20
-Gets all users' products that have prive greater than 20, and sorts them by name property.
+Gets all users' products that have price greater than 20, and sorts them by name property.
 
 **Third party:**
  - Filtering/Paging/Sorting provided by [Gridify](https://alirezanet.github.io/Gridify/)
