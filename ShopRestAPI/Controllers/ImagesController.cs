@@ -37,7 +37,7 @@ namespace ShopRestAPI.Controllers
                 await imageFile.FlushAsync();
             }
 
-            return new ObjectResult(new { ImageURL = imageName });
+            return new ProductImageDTO{ ImageURL = imageName };
         }
     }
 }
