@@ -79,6 +79,8 @@ namespace ShopRestAPI.Controllers
             if (product.SellerId != user.Id)
                 return StatusCode((int)HttpStatusCode.Forbidden);
 
+            //remove also all product images
+            context.ProductsImages.RemoveRange(context.ProductsImages.Where(image => image.ProductId == product.Id));
             context.Products.Remove(product);
             await context.SaveChangesAsync();
 

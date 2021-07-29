@@ -14,9 +14,7 @@ namespace ShopRestAPI.Models
         public string DbPath { get; private set; } = "database.db";
 
         public ShopContext()
-        {
-            Database.EnsureCreated();
-        }
+            => Database.EnsureCreated();
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite($"Data Source={DbPath}");
