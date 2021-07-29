@@ -18,7 +18,7 @@ namespace ShopRestAPI.Controllers
 
         [HttpGet, Produces(typeof(Paging<Product>))]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts([FromQuery] GridifyQuery gQuery)
-        {
+        {          
             var user = await GetUser();
             var products = context.Products.Where(product => product.SellerId == user.Id);
 
@@ -34,7 +34,7 @@ namespace ShopRestAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(long id)
+        public async Task<ActionResult<Product>> GetProduct(ulong id)
         {
             var product = await context.Products.FindAsync(id);
             var user = await GetUser();
@@ -68,7 +68,7 @@ namespace ShopRestAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct(long id)
+        public async Task<IActionResult> DeleteProduct(ulong id)
         {
             var product = await context.Products.FindAsync(id);
             var user = await GetUser();

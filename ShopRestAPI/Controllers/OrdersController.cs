@@ -65,7 +65,11 @@ namespace ShopRestAPI.Controllers
             if (order == null)
                 return NotFound();
 
-            if (order.Product.SellerId != user.Id)
+            var product = await context.Products.FindAsync(order.ProductId);
+            if (product == null)
+                return NotFound();
+
+            if (product.SellerId != user.Id)
                 return StatusCode((int)HttpStatusCode.Forbidden);
 
             context.Orders.Remove(order);
@@ -81,7 +85,12 @@ namespace ShopRestAPI.Controllers
                 return BadRequest();
 
             var user = await GetUser();
-            if (order.Product.SellerId != user.Id)
+            var product = await context.Products.FindAsync(order.ProductId);
+
+            if (product == null)
+                return NotFound();
+
+            if (product.SellerId != user.Id)
                 return StatusCode((int)HttpStatusCode.Forbidden);
 
             context.Entry(order).State = EntityState.Modified; 
