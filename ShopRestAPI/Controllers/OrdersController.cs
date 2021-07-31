@@ -59,6 +59,12 @@ namespace ShopRestAPI.Controllers
             if(product.SellerId != user.Id)
                 return StatusCode((int)HttpStatusCode.Forbidden);
 
+            if(order.Count > product.Count)
+                return StatusCode((int)HttpStatusCode.Forbidden);
+
+            product.Count -= order.Count;
+            context.Entry(product).State = EntityState.Modified;
+
             context.Orders.Add(order);
             await context.SaveChangesAsync();
 
@@ -80,6 +86,13 @@ namespace ShopRestAPI.Controllers
 
             if (product.SellerId != user.Id)
                 return StatusCode((int)HttpStatusCode.Forbidden);
+
+            // if order was not finalized, products are still in shop
+            if (order.OrderStatus != OrderStatus.Delivered)
+            {
+                product.Count += order.Count;
+                context.Entry(product).State = EntityState.Modified;
+            }
 
             context.Orders.Remove(order);
             await context.SaveChangesAsync();
