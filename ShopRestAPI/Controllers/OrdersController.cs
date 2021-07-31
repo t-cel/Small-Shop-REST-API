@@ -50,6 +50,15 @@ namespace ShopRestAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Order>> CreateOrder(Order order)
         {
+            var user = await GetUser();
+            var product = await context.Products.FindAsync(order.ProductId);
+
+            if (product == null)
+                return NotFound();
+
+            if(product.SellerId != user.Id)
+                return StatusCode((int)HttpStatusCode.Forbidden);
+
             context.Orders.Add(order);
             await context.SaveChangesAsync();
 
