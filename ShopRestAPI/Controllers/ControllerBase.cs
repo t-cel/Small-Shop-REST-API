@@ -72,7 +72,7 @@ namespace ShopRestAPI.Controllers
         /// All of our actions require authorization, this method will be called before any action call.
         /// </summary>
         public override async void OnActionExecuting(ActionExecutingContext context)
-        {
+        {        
             var authorized = await CheckAuthorizationHeader(context.HttpContext);
             context.Result = authorized ? null : new UnauthorizedResult();
             base.OnActionExecuting(context);
