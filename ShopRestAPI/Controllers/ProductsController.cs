@@ -24,7 +24,7 @@ namespace ShopRestAPI.Controllers
 
             try
             {
-                return await products.GridifyQueryable(gQuery).Query.ToListAsync();
+                return Ok(await products.GridifyQueryable(gQuery).Query.ToListAsync());
             }
             catch(GridifyFilteringException)
             {

@@ -8,11 +8,15 @@ using ShopRestAPI.Controllers;
 using ShopRestAPI.Models;
 using System.Collections.Generic;
 using System.IO;
+using Microsoft.EntityFrameworkCore.InMemory;
+using Microsoft.EntityFrameworkCore;
 
 namespace ShopRestAPI
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -21,8 +25,6 @@ namespace ShopRestAPI
             if(!Directory.Exists(ImagesController.GetImagesPath()))
                 Directory.CreateDirectory(ImagesController.GetImagesPath());
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -55,7 +57,7 @@ namespace ShopRestAPI
                     }
                 });
             });
-            services.AddEntityFrameworkSqlite().AddDbContext<ShopContext>();
+            services.AddEntityFrameworkSqlite().AddDbContext<ShopContext>(options => options.UseSqlite("Data Source=database.db"));
             services.AddCors(o => o.AddPolicy("AllowAll", builder =>
             {
                 builder.AllowAnyOrigin()

@@ -17,7 +17,7 @@ namespace ShopRestAPI.Controllers
         {
             var user = await GetUser();
             var userDTO = new UserDTO { Id = user.Id, Name = user.Name, Email = user.Email };
-            return userDTO;
+            return Ok(userDTO);
         }
     }
 }

@@ -8,6 +8,9 @@ D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\S
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\ref\ShopRestAPI.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\ShopRestAPI.pdb
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\BCrypt.Net-Next.dll
+D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Coderful.EntityFramework.Testing.dll
+D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\EntityFramework.SqlServer.dll
+D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\EntityFramework.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Gridify.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Humanizer.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
@@ -16,6 +19,7 @@ D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\M
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Sqlite.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
@@ -28,6 +32,7 @@ D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\M
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Moq.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Newtonsoft.Json.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\SQLitePCLRaw.batteries_v2.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\SQLitePCLRaw.nativelibrary.dll

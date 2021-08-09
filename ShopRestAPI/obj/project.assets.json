@@ -11,6 +11,30 @@
           "lib/net5.0/BCrypt.Net-Next.dll": {}
         }
       },
+      "Coderful.EntityFramework.Testing/1.5.1": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.1.1",
+          "Moq": "4.2.1408.717"
+        },
+        "compile": {
+          "lib/net45/Coderful.EntityFramework.Testing.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Coderful.EntityFramework.Testing.dll": {}
+        }
+      },
+      "EntityFramework/6.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
       "Gridify/1.3.4": {
         "type": "package",
         "compile": {
@@ -179,6 +203,18 @@
         },
         "build": {
           "build/netcoreapp3.0/Microsoft.EntityFrameworkCore.Design.props": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.InMemory/5.0.8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.8"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.dll": {}
         }
       },
       "Microsoft.EntityFrameworkCore.Relational/5.0.8": {
@@ -523,6 +559,15 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "Moq/4.2.1408.717": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Moq.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Moq.dll": {}
         }
       },
       "Newtonsoft.Json/10.0.1": {
@@ -1817,6 +1862,48 @@
         "lib/netstandard2.1/BCrypt.Net-Next.xml"
       ]
     },
+    "Coderful.EntityFramework.Testing/1.5.1": {
+      "sha512": "RkbShFRvDACDR4KBgPVulmSsrJ7qVm5no0PMn+PsC0X5KPOxZZBOujgcEA3OBkp28TBxiC1EGR+vIMGdoGEOcA==",
+      "type": "package",
+      "path": "coderful.entityframework.testing/1.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "coderful.entityframework.testing.1.5.1.nupkg.sha512",
+        "coderful.entityframework.testing.nuspec",
+        "lib/net45/Coderful.EntityFramework.Testing.dll"
+      ]
+    },
+    "EntityFramework/6.1.1": {
+      "sha512": "FdXtqmcaIMLnjS46aQjpQGKaV0PuPhAIYAVHN6vB7UMjMr4iLZsMIz4Nk7m31iUvh+hNPF9t7tZkW0CczGNr6A==",
+      "type": "package",
+      "path": "entityframework/6.1.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/App.config.transform",
+        "content/Web.config.transform",
+        "entityframework.6.1.1.nupkg.sha512",
+        "entityframework.nuspec",
+        "lib/net40/EntityFramework.SqlServer.dll",
+        "lib/net40/EntityFramework.SqlServer.xml",
+        "lib/net40/EntityFramework.dll",
+        "lib/net40/EntityFramework.xml",
+        "lib/net45/EntityFramework.SqlServer.dll",
+        "lib/net45/EntityFramework.SqlServer.xml",
+        "lib/net45/EntityFramework.dll",
+        "lib/net45/EntityFramework.xml",
+        "tools/EntityFramework.PowerShell.Utility.dll",
+        "tools/EntityFramework.PowerShell.dll",
+        "tools/EntityFramework.psd1",
+        "tools/EntityFramework.psm1",
+        "tools/about_EntityFramework.help.txt",
+        "tools/init.ps1",
+        "tools/install.ps1",
+        "tools/migrate.exe"
+      ]
+    },
     "Gridify/1.3.4": {
       "sha512": "S2eFvHTqx3UJ75+44CfJVdvluumkaHrhWBLjOpD19RbizJfXjuErCdkwaxwPnEhL4fdJbluOYAS/EIKNXHVjYw==",
       "type": "package",
@@ -2084,6 +2171,20 @@
         "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.xml",
         "microsoft.entityframeworkcore.design.5.0.8.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/5.0.8": {
+      "sha512": "LV9/hBseBO3kZKa/MPlWfLvfKL64Q7y2ZW2euW+kcNhhAQWsl52JIQHSL1Gu3CnzfQVbGUDkusnN4OWh6k/ALw==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.inmemory/5.0.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.dll",
+        "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.xml",
+        "microsoft.entityframeworkcore.inmemory.5.0.8.nupkg.sha512",
+        "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/5.0.8": {
@@ -2676,6 +2777,23 @@
         "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Moq/4.2.1408.717": {
+      "sha512": "AkC+iGMF3CqeUuSgI/FVcZWLCc+HJ2MNGtWZa03a5CiLku+vLFJVU7lWO7I5CoASU73KYqtivfnCq2U4fljByQ==",
+      "type": "package",
+      "path": "moq/4.2.1408.717",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Moq.dll",
+        "lib/net35/Moq.xml",
+        "lib/net40/Moq.dll",
+        "lib/net40/Moq.xml",
+        "lib/sl4/Moq.Silverlight.dll",
+        "lib/sl4/Moq.Silverlight.xml",
+        "moq.4.2.1408.717.nupkg.sha512",
+        "moq.nuspec"
       ]
     },
     "Newtonsoft.Json/10.0.1": {
@@ -6389,8 +6507,10 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "BCrypt.Net-Next >= 4.0.2",
+      "Coderful.EntityFramework.Testing >= 1.5.1",
       "Gridify >= 1.3.4",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.8",
+      "Microsoft.EntityFrameworkCore.InMemory >= 5.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.8",
       "Microsoft.EntityFrameworkCore.Sqlite >= 5.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.8",
@@ -6441,6 +6561,10 @@
             "target": "Package",
             "version": "[4.0.2, )"
           },
+          "Coderful.EntityFramework.Testing": {
+            "target": "Package",
+            "version": "[1.5.1, )"
+          },
           "Gridify": {
             "target": "Package",
             "version": "[1.3.4, )"
@@ -6448,6 +6572,10 @@
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
+            "target": "Package",
+            "version": "[5.0.8, )"
+          },
+          "Microsoft.EntityFrameworkCore.InMemory": {
             "target": "Package",
             "version": "[5.0.8, )"
           },
@@ -6495,5 +6623,37 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Coderful.EntityFramework.Testing 1.5.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Coderful.EntityFramework.Testing",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'EntityFramework 6.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "EntityFramework",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Moq 4.2.1408.717' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Moq",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }
