@@ -11,6 +11,7 @@ D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\B
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Coderful.EntityFramework.Testing.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\EntityFramework.SqlServer.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\EntityFramework.dll
+D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\FluentAssertions.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Gridify.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Humanizer.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
@@ -90,5 +91,3 @@ D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\obj\Debug\net5.0\S
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\obj\Debug\net5.0\ref\ShopRestAPI.dll
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\obj\Debug\net5.0\ShopRestAPI.pdb
 D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\obj\Debug\net5.0\ShopRestAPI.genruntimeconfig.cache
-D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\obj\Debug\net5.0\ShopRestAPI.csprojAssemblyReference.cache
-D:\Projekty\visual Studio projects\C#\ShopRestAPI\ShopRestAPI\bin\Debug\net5.0\FluentAssertions.dll

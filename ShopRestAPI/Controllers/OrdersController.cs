@@ -16,7 +16,7 @@ namespace ShopRestAPI.Controllers
         public OrdersController(ShopContext context)
             : base(context) { }
 
-        [HttpGet]
+        [HttpGet, Produces(typeof(Paging<Order>))]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrders([FromQuery] GridifyQuery gQuery)
         {
             var user = await GetUser();
@@ -24,7 +24,7 @@ namespace ShopRestAPI.Controllers
 
             try
             {
-                return await orders.GridifyQueryable(gQuery).Query.ToListAsync();
+                return Ok(await orders.GridifyQueryable(gQuery).Query.ToListAsync());
             }
             catch (GridifyFilteringException)
             {
@@ -42,9 +42,9 @@ namespace ShopRestAPI.Controllers
                 return NotFound();
 
             if (order.Product.SellerId != user.Id)
-                return StatusCode((int)HttpStatusCode.Forbidden);
+                return Forbid();
 
-            return order;
+            return Ok(order);
         }
 
         [HttpPost]
@@ -57,10 +57,10 @@ namespace ShopRestAPI.Controllers
                 return NotFound();
 
             if(product.SellerId != user.Id)
-                return StatusCode((int)HttpStatusCode.Forbidden);
+                return Forbid();
 
             if(order.Count > product.Count)
-                return StatusCode((int)HttpStatusCode.Forbidden);
+                return BadRequest();
 
             product.Count -= order.Count;
             context.Entry(product).State = EntityState.Modified;
@@ -85,7 +85,7 @@ namespace ShopRestAPI.Controllers
                 return NotFound();
 
             if (product.SellerId != user.Id)
-                return StatusCode((int)HttpStatusCode.Forbidden);
+                return Forbid();
 
             // if order was not finalized, products are still in shop
             if (order.OrderStatus != OrderStatus.Delivered)
@@ -113,21 +113,16 @@ namespace ShopRestAPI.Controllers
                 return NotFound();
 
             if (product.SellerId != user.Id)
-                return StatusCode((int)HttpStatusCode.Forbidden);
+                return Forbid();
 
-            context.Entry(order).State = EntityState.Modified; 
+            var _order = await context.Orders.FindAsync(id);
+            if (_order == null)
+                return NotFound();
 
-            try
-            {
-                await context.SaveChangesAsync();
-            }
-            catch(DbUpdateConcurrencyException)
-            {
-                if (!context.Orders.Any(order => order.Id == id))
-                    return NotFound();
-                else
-                    throw;
-            }
+            context.Entry(_order).State = EntityState.Detached; 
+            context.Entry(order).State = EntityState.Modified;
+
+            await context.SaveChangesAsync();
 
             return NoContent();
         }

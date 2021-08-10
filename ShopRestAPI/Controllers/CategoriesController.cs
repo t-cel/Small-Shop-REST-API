@@ -14,9 +14,9 @@ namespace ShopRestAPI.Controllers
             : base(context) { }
 
         [HttpGet]
-        public async Task<IEnumerable<Category>> GetCategories()
+        public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
         {
-            return await context.Categories.ToListAsync();
+            return Ok(await context.Categories.ToListAsync());
         }
     }
 }

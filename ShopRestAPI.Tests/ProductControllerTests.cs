@@ -1,20 +1,16 @@
-﻿using ShopRestAPI.Controllers;
+﻿using FluentAssertions;
+using Gridify;
+using Microsoft.AspNetCore.Mvc;
+using ShopRestAPI.Controllers;
 using ShopRestAPI.Models;
+using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 using Xunit.Abstractions;
-using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Http;
-using System.Linq;
-using Gridify;
-using System.Net;
-using Microsoft.EntityFrameworkCore;
-using FluentAssertions;
-using FluentAssertions.Collections;
 
 namespace ShopRestAPI.Tests
 {
-    public class ProductControllerTests : ControllerTestsBase
+    public class ProductControllerTests : BaseControllerTests
     {
         public ProductControllerTests(ITestOutputHelper output)
             : base(output)
@@ -32,7 +28,6 @@ namespace ShopRestAPI.Tests
                 new Product{ Name="Sport Shoes", Price=20.0f, Count=2, SellerId=3, CategoryId=2 },
                 new Product{ Name="Sport TShirt", Price=50.0f, Count=5, SellerId=1, CategoryId=2 },
             });
-            //context.Products.ToList().ForEach(product => context.Entry(product).State = EntityState.Detached);
             context.SaveChanges();
         }
 
@@ -48,7 +43,7 @@ namespace ShopRestAPI.Tests
         }
 
         [Fact]
-        public async void GetProducts_ReturnsAllProducts()
+        public async void GetProducts_ReturnsAllUserProducts()
         {
             using (var context = new ShopContext(CreateNewDbContextOptions()))
             {
@@ -61,7 +56,7 @@ namespace ShopRestAPI.Tests
 
                 var okResult = result.Result as OkObjectResult;
                 Assert.IsType<List<Product>>(okResult.Value);
-                Assert.Equal(5, (okResult.Value as List<Product>).Count);
+                Assert.Equal(5, (okResult.Value as List<Product>).Count); //all products of logged user
             }
         }
 
@@ -70,7 +65,7 @@ namespace ShopRestAPI.Tests
         [InlineData("Price>>10,Price<<60", 2)]
         [InlineData("Count>>8", 2)]
         [InlineData("Price<<3|Count>>9", 2)]
-        public async void GetProducts_ReturnsFilteredProducts(string filter, int expectedItemsCount)
+        public async void GetProducts_ReturnsFilteredUserProducts(string filter, int expectedItemsCount)
         {
             using (var context = new ShopContext(CreateNewDbContextOptions()))
             {
@@ -94,7 +89,7 @@ namespace ShopRestAPI.Tests
         }
 
         [Fact]
-        public async void GetProducts_ReturnsPaginatedProducts()
+        public async void GetProducts_ReturnsPaginatedUserProducts()
         {
             using (var context = new ShopContext(CreateNewDbContextOptions()))
             {
@@ -119,7 +114,7 @@ namespace ShopRestAPI.Tests
         }
 
         [Fact]
-        public async void GetProducts_ReturnsSortedProducts()
+        public async void GetProducts_ReturnsSortedUserProducts()
         {
             using (var context = new ShopContext(CreateNewDbContextOptions()))
             {

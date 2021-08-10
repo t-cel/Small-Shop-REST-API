@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ShopRestAPI.Tests
 {
-    public class UserControllerTests : ControllerTestsBase
+    public class UserControllerTests : BaseControllerTests
     {
         public UserControllerTests(ITestOutputHelper output)
             : base(output)

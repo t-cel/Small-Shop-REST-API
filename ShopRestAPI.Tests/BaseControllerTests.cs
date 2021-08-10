@@ -8,7 +8,7 @@ using System;
 
 namespace ShopRestAPI.Tests
 {
-    public class ControllerTestsBase
+    public class BaseControllerTests
     {
         protected readonly ITestOutputHelper output;
 
@@ -16,7 +16,7 @@ namespace ShopRestAPI.Tests
         /// Initializes in memory database options and base auth data
         /// </summary>
         /// <param name="output"></param>
-        protected ControllerTestsBase(ITestOutputHelper output)
+        protected BaseControllerTests(ITestOutputHelper output)
         {
             this.output = output;
         }

@@ -28,7 +28,6 @@ namespace ShopRestAPI.Controllers
             }
             catch(GridifyFilteringException)
             {
-
                 return BadRequest();
             }         
         }
@@ -68,7 +67,7 @@ namespace ShopRestAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct(ulong id)
+        public async Task<ActionResult> DeleteProduct(ulong id)
         {
             var product = await context.Products.FindAsync(id);
             var user = await GetUser();
