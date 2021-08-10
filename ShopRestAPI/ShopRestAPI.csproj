@@ -16,6 +16,7 @@
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
     <PackageReference Include="Coderful.EntityFramework.Testing" Version="1.5.1" />
+    <PackageReference Include="FluentAssertions" Version="5.10.3" />
     <PackageReference Include="Gridify" Version="1.3.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.8">
       <PrivateAssets>all</PrivateAssets>

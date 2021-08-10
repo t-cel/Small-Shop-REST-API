@@ -43,9 +43,9 @@ namespace ShopRestAPI.Controllers
                 return NotFound();
 
             if(product.SellerId != user.Id)
-                return StatusCode((int)HttpStatusCode.Forbidden);
+                return Forbid();
 
-            return product;
+            return Ok(product);
         }
 
         [HttpPost]
@@ -77,7 +77,7 @@ namespace ShopRestAPI.Controllers
                 return NotFound();
 
             if (product.SellerId != user.Id)
-                return StatusCode((int)HttpStatusCode.Forbidden);
+                return Forbid();
 
             //remove also all product images
             context.ProductsImages.RemoveRange(context.ProductsImages.Where(image => image.ProductId == product.Id));
@@ -93,23 +93,18 @@ namespace ShopRestAPI.Controllers
             if (id != product.Id)
                 return BadRequest();
 
+            var _product = await context.Products.FindAsync(id);
+            if (_product == null)
+                return NotFound();
+            
             var user = await GetUser();
-            if (product.SellerId != user.Id)
-                return StatusCode((int)HttpStatusCode.Forbidden);
+            if (_product.SellerId != user.Id)
+                return Forbid();
 
+            context.Entry(_product).State = EntityState.Detached;
             context.Entry(product).State = EntityState.Modified;
 
-            try
-            {
-                await context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!context.Products.Any(product => product.Id == id))
-                    return NotFound();
-                else
-                    throw;
-            }
+            await context.SaveChangesAsync();
 
             return NoContent();
         }
@@ -124,7 +119,7 @@ namespace ShopRestAPI.Controllers
                 return NotFound();
 
             if (product.SellerId != user.Id)
-                return StatusCode((int)HttpStatusCode.Forbidden);
+                return Forbid();
 
             if (!System.IO.File.Exists($"{ImagesController.ImagesLocalPath}\\{productImage.ImageURL}"))
                 return NotFound();
@@ -145,9 +140,9 @@ namespace ShopRestAPI.Controllers
                 return NotFound();
 
             if (product.SellerId != user.Id)
-                return StatusCode((int)HttpStatusCode.Forbidden);
+                return Forbid();
 
-            return await context.ProductsImages.Where(image => image.ProductId == id).ToListAsync();
+            return Ok(await context.ProductsImages.Where(image => image.ProductId == id).ToListAsync());
         }
 
         [HttpDelete("{id}/images/{imageID}")]
@@ -155,14 +150,16 @@ namespace ShopRestAPI.Controllers
         {
             var user = await GetUser();
             var image = await context.ProductsImages.FindAsync(imageID);
+            var product = await context.Products.FindAsync(id);
 
             if (image == null)
                 return NotFound();
 
-            var product = await context.Products.FindAsync(image.ProductId);
+            if (product == null)
+                return NotFound();
 
             if (product.SellerId != user.Id)
-                return StatusCode((int)HttpStatusCode.Forbidden);
+                return Forbid();
 
             context.Remove(image);
             await context.SaveChangesAsync();

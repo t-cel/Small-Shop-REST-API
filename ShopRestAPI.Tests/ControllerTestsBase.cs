@@ -28,7 +28,7 @@ namespace ShopRestAPI.Tests
                 .BuildServiceProvider();
 
             var builder = new DbContextOptionsBuilder<ShopContext>();
-            builder.UseInMemoryDatabase("ShopDatabase")
+            builder.UseInMemoryDatabase(Guid.NewGuid().ToString())
                    .UseInternalServiceProvider(serviceProvider);
 
             return builder.Options;

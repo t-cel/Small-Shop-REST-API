@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[1.5.1, )"
             },
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[5.10.3, )"
+            },
             "Gridify": {
               "target": "Package",
               "version": "[1.3.4, )"
